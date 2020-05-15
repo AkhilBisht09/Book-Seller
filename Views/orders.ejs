@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <title>َDash</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/public2/dashboard.css">
+</head>
+
+<body>
+    <%- include('partials/navbar.ejs') %>
+    <div class="container-fluid" style="margin-top:3em;">
+        <div class="row">
+            <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+                <div class="sidebar-sticky">
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/dashboard">
+                                <span data-feather="home"></span>
+                                Dashboard <span class="sr-only"></span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#">
+                                <span data-feather="file">(Current)</span>
+                                Orders
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/products">
+                                <span data-feather="shopping-cart"></span>
+                                Products
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <span data-feather="users"></span>
+                                Customers
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/sellbook">
+                                <span data-feather="bar-chart-2"></span>
+                                Sell Books
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <span data-feather="layers"></span>
+                                Integrations
+                            </a>
+                        </li>
+                    </ul>
+
+                    
+                </div>
+            </nav>
+
+            <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+            <h3>Your Orders</h3>
+                <div style="padding-top:5em; background-color:#9099A2;">
+                    <% if(result.length===0){%>
+                    <center>
+                        <h3>You had put nothing on sale</h3>
+                        <p>Put something on sale</p>
+                    </center>
+                    <%}%>
+                    <% result.forEach((row,index) => {%>
+                    <% if(index%5 === 0) {%>
+                    <div class="row">
+                        <div class="col-sm-1"></div>
+                        <%}%>
+                                <div class="col-sm-2">
+                                    <a href="/product/<%=row.prodid%>" style="color: black;" >
+                        <div class="card" style="background-color:initial; border: initial;">
+                            <img src="public/<%= row.photo %>" style=" height: 16em; width:100%;">
+                            <div class="card-body">
+                                <h5 class="card-title"><%= row.prod_name %></h5>
+                                <p class="card-text"><%=row.author%>
+                                    <br>
+                                    &#x20b9;<%= row.cost %>
+                                </p>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <% if(index%5 === 4) {%>
+                </div><br>
+                <%}%>
+                                <%}); %>
+                </div>
+    <script>
+        feather.replace()
+    </script>
+
+    <%- include('partials/footer.ejs') %>

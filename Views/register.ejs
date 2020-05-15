@@ -1,0 +1,187 @@
+<html>
+    <head>
+        <title>Register</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+        integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+        integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+        crossorigin="anonymous"></script>
+        <style>
+            .page-wrapper {
+  min-height: 100vh;
+}
+.bg-blue {
+  background: #2c6ed5;
+}
+.p-t-100 {
+  padding-top: 100px;
+}
+
+.p-t-20 {
+  padding-top: 20px;
+}
+
+.p-b-100 {
+  padding-bottom: 100px;
+}
+.font-robo {
+  font-family: "Roboto", "Arial", "Helvetica Neue", sans-serif;
+}
+            .wrapper {
+  margin: 0 auto;
+}
+
+.wrapper--w680 {
+  max-width: 680px;
+}
+.card {
+  overflow: hidden;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  background: #fff;
+}
+
+.card-1 {
+  -webkit-box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.15);
+  box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.15);
+}
+
+.card-1 .card-heading {
+  background: url("public2/images/bg-head-02.jpg") center center/cover no-repeat;
+  padding-top: 210px;
+}
+
+.card-1 .card-body {
+  padding: 0 90px;
+  padding-top: 55px;
+  padding-bottom: 65px;
+}
+input {
+  outline: none;
+  margin: 0;
+  border: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  width: 100%;
+  font-size: 14px;
+  font-family: inherit;
+}
+
+.input-group {
+  position: relative;
+  margin-bottom: 30px;
+  border-bottom: 2px solid #ccc;
+}
+
+.input-icon {
+  position: absolute;
+  font-size: 18px;
+  color: #ccc;
+  right: 8px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+.input--style-1 {
+  padding: 9px 0;
+  color: #666;
+}
+
+.input--style-1::-webkit-input-placeholder {
+  /* WebKit, Blink, Edge */
+  color: #555;
+}
+
+.input--style-1:-moz-placeholder {
+  /* Mozilla Firefox 4 to 18 */
+  color: #555;
+  opacity: 1;
+}
+
+.input--style-1::-moz-placeholder {
+  /* Mozilla Firefox 19+ */
+  color: #555;
+  opacity: 1;
+}
+
+.input--style-1:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: #555;
+}
+
+.input--style-1:-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: #555;
+}
+.card-1 .card-body {
+  padding: 0 90px;
+  padding-top: 55px;
+  padding-bottom: 65px;
+}
+.title {
+  margin-bottom: 37px;
+}
+        </style>
+    </head>
+    <body>
+        <div class="page-wrapper bg-blue p-t-100 p-b-100 font-robo">
+            <div class="wrapper wrapper--w680">
+                <div class="card card-1">
+                    <div class="card-heading"></div>
+        <div class="card-body">
+            <h2 class="title">Registration Info</h2>
+    <form  method="POST" action="/auth/register">
+            <div class="input-group">
+                <input type="text"  class="input--style-1" placeholder="Username" id="username" name="username">
+            </div>
+       
+            <div class="input-group">
+                <input type="text" class="input--style-1" id="email" name="email" placeholder="Email">
+            </div>
+    
+            <div class="input-group">
+                <input type="password" class="input--style-1" id="password" placeholder="Password" name="password">
+            </div>
+        
+            <div class="input-group">
+                <input type="password" class="input--style-1" id="confirm-password" placeholder="Confirm Password" name="confirm password">
+            </div>
+
+            <div class="input-group">
+                <input  class="input--style-1" id="dob" name="dob" placeholder="Date Of Birth" type="text" onfocus="(this.type='date')">
+            </div>
+
+            <div class="input-group">
+              <input type="text" class="input--style-1" id="phoneno" placeholder="Phone NO."
+                name="phoneno">
+            </div>
+
+            <div class="input-group">
+              <input type="text" class="input--style-1" id="address" placeholder="Address"
+                name="address">
+            </div>
+        
+        <center>
+        <input type="submit" class="btn btn-primary mb-2" value="Register"/>
+        </center>
+    </form>
+    </div>
+    </div>
+    </div>
+    </div>
+    </body>
+</html>

@@ -1,0 +1,31 @@
+<%- include('partials/header.ejs') %>
+<div style="padding-top:5em; background-color:#9099A2;">
+    <div class="row">
+<div class="col-sm-3">
+    <img src="/public/<%= prod.photo %>"
+        style="background-repeat:no-repeat; background-size: contain; width: 20em; height: 30em;">
+</div>
+<div class="col-sm-8">
+    <h5 class="card-title"><%= prod.prod_name %></h5>
+    <p class="card-text"><%=prod.author%>
+        <br>
+        &#x20b9;<%= prod.cost %>
+        <br>
+        <%= prod.description %>
+    </p>
+    <% if(req.user.userId===user.userId){%>
+        <a href="/product/deleteproduct/<%=prod.prodid%>/<%=prod.photo %>" class="btn btn-primary">Delete From Shop</a>
+    <% }else{ %>
+     <a href="/product/purchase/<%=prod.prodid%>" class="btn btn-primary">Buy Now</a>
+    <% } %>
+    <hr>
+    <h3>Seller</h3>
+    <h5 class="card-title"><%= user.username %></h5>
+    <p class="card-text"><%=user.email%>
+    </p>
+
+</div>
+
+</div>
+                
+<%- include('partials/footer.ejs') %>

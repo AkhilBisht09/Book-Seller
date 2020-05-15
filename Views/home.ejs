@@ -1,0 +1,30 @@
+<%- include('partials/header.ejs') %>
+<div style="padding-top:5em; background-color:#9099A2;">
+    <% rows.forEach((row,index) => {%>
+    <% if(index%5 === 0) {%>
+    <div class="row">
+        <div class="col-sm-1"></div>
+        <%}%>
+                <div class="col-sm-2">
+                    <a href="/product/<%=row.prodid%>" style="color: black;" >
+                    <div class="card" style="background-color:initial; border: initial;" >
+                    <img src="public/<%= row.photo %>" style=" height: 16em; width:100%;" >
+                    <div class="card-body">
+                            <h5 class="card-title"><%= row.prod_name %></h5>
+        <p class="card-text"><%=row.author%>
+            <br>
+            &#x20b9;<%= row.cost %>
+        </p>
+        </a>
+    </div>
+</div>
+</div>
+<% if(index%5 === 4) {%>
+</div><br>
+<%}%>
+                <%}); %>
+</div>
+<%- include('partials/footer.ejs') %>
+
+
+
